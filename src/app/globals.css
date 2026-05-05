@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #09090B;
+  --bg-panel: #111113;
+  --bg-card: #18181B;
+  --bg-elevated: #1F1F23;
+  --bg-border: #27272A;
+  --bg-hover: #2D2D32;
+
+  --accent-blue: #3B82F6;
+  --accent-amber: #F59E0B;
+  --accent-green: #22C55E;
+  --accent-purple: #A855F7;
+  --accent-red: #EF4444;
+
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
+
+  --chart-hognestad: #3B82F6;
+  --chart-todeschini: #F59E0B;
+  --chart-parabola: #22C55E;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-hover);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3F3F46;
+}
+
+/* KaTeX overrides */
+.katex {
+  font-size: 1em;
+  color: inherit;
+}
+.katex-display {
+  margin: 0.5rem 0;
+}
+
+/* Plotly overrides — quita el logo de plotly */
+.js-plotly-plot .plotly .modebar {
+  top: 8px !important;
+  right: 8px !important;
+}
+.js-plotly-plot .plotly .modebar-btn path {
+  fill: #71717A !important;
+}
+.js-plotly-plot .plotly .modebar-btn:hover path {
+  fill: #A1A1AA !important;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.35s ease-out both;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(24, 24, 27, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(39, 39, 42, 0.8);
+}
+
+/* Formula block */
+.formula-block {
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-left: 3px solid var(--accent-blue);
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6, #A855F7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+.glow-amber {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+}
+.glow-green {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+}

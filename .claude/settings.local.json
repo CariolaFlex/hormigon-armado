@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(ls \"C:\\\\Users\\\\andre\\\\.claude\\\\projects\\\\C--Universidad-hormigon\\\\memory\"\" 2>/dev/null || echo \"EMPTY \")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/capitulo-1/laboratorio)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 14480 //F)",
+      "Bash(taskkill //PID 12524 //F)"
+    ]
+  }
+}
