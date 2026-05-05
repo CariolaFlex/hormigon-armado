@@ -43,9 +43,11 @@ export default function MomentosCortantesPage() {
   }, [form, cargas]);
 
   const loadEjSimple = () => {
+    const ejCargas: CargaInput[] = [{ tipo: "q", valor: 2.5 }, { tipo: "P", valor: 5, pos: 4 }];
     setForm({ tipo: "simple", L: "8" });
-    setCargas([{ tipo: "q", valor: 2.5 }, { tipo: "P", valor: 5, pos: 4 }]);
-    setTimeout(calcular, 50);
+    setCargas(ejCargas);
+    const res = calcMomentos({ tipo: "simple", L: 8, cargas: ejCargas });
+    setResult(res);
   };
 
   const loadEjVoladizo = () => {

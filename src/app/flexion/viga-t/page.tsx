@@ -51,7 +51,11 @@ export default function VigaTPage() {
 
   const loadEj = () => {
     setForm({ bw:"25", b:"90", hf:"12", d:"58", h:"65", fc:"210", fy:"4200", nb:"4", phi:"22", Mu:"" });
-    setTimeout(calcular, 50);
+    const res = analizarVigaT({
+      bw:25, b:90, hf:12, d:58, h:65, fc:210, fy:4200,
+      nb:4, phi_mm:22, Mu: null,
+    });
+    setResult(res);
   };
 
   const zona = result?.zona ?? "ductil";

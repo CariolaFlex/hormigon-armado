@@ -24,7 +24,7 @@ import type {
 
 // ── Constantes globales ──────────────────────────────────
 export const Ecu = 0.003;       // Deformación última hormigón (ACI 318)
-export const Es  = 210000;      // Módulo elasticidad acero [kgf/cm²]
+export const Es  = 2040000;     // Módulo elasticidad acero [kgf/cm²] = 200,000 MPa
 export const gamma_c = 2500;    // Peso unitario hormigón [kgf/m³]
 
 // ── Barras comerciales (diámetro mm → área cm²) ──────────

@@ -50,8 +50,13 @@ export default function DobleArmaduraPage() {
   }, [form]);
 
   const loadEj = () => {
-    setForm({ b:"30", h:"65", d:"58", d_prima:"7", fc:"210", fy:"4200", nb:"5", phi:"25", nb_prima:"2", phi_prima:"16", Mu:"" });
-    setTimeout(calcular, 50);
+    setForm({ b:"35", h:"70", d:"65", d_prima:"3", fc:"180", fy:"4200", nb:"5", phi:"22", nb_prima:"2", phi_prima:"10", Mu:"" });
+    const res = analizarDobleArmadura({
+      b:35, h:70, d:65, d_prima:3, fc:180, fy:4200,
+      nb:5, phi_mm:22, nb_prima:2, phi_prima_mm:10,
+      Mu: null,
+    });
+    setResult(res);
   };
 
   const zona = result?.zona ?? "ductil";
@@ -90,7 +95,7 @@ export default function DobleArmaduraPage() {
             <Card title="Materiales">
               <div className="grid grid-cols-2 gap-2">
                 <SelectField label="f'c (kgf/cm²)" value={form.fc} onChange={v => set("fc", v)}
-                  opts={[140,175,200,210,250,280,350].map(String)}/>
+                  opts={[140,175,180,200,210,250,280,350].map(String)}/>
                 <SelectField label="fy (kgf/cm²)" value={form.fy} onChange={v => set("fy", v)}
                   opts={["2800","4200","5000","6000"]}/>
               </div>

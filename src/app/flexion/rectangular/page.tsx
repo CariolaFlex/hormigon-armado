@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Calculator, BookOpen, RefreshCw } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { analizarRectangular, getBeta, calcAs, BARRAS } from "@/lib/hormigon/flexion";
+import { analizarRectangular, getBeta, calcAs, BARRAS, Es } from "@/lib/hormigon/flexion";
 import { SeccionTransversal } from "@/components/svg/SeccionTransversal";
 import { DiagramaDeformaciones } from "@/components/svg/DiagramaDeformaciones";
 import { DiagramaFuerzas } from "@/components/svg/DiagramaFuerzas";
@@ -62,8 +62,10 @@ export default function RectangularPage() {
   }, [form, getAs]);
 
   const loadEj01 = () => {
-    setForm({ b:"30",h:"60",r:"6.8",fc:"200",fy:"4200",modoAs:"barras",nb:"3",phi:"25",As_direct:"",Mu:"" });
-    setTimeout(calcular, 50);
+    setForm({ b:"25",h:"55",r:"5",fc:"200",fy:"4200",modoAs:"barras",nb:"3",phi:"25",As_direct:"",Mu:"" });
+    const As = calcAs(3, 25);
+    const res = analizarRectangular({ b:25, h:55, d:50, fc:200, fy:4200, As, Mu: null });
+    setResult(res);
   };
 
   return (
@@ -247,7 +249,7 @@ export default function RectangularPage() {
                     conclusion={{ tipo:"ok", texto:`c = ${result.c.toFixed(3)} cm` }} />
                   <StepCard num={4} title="Deformación del acero εs" result={`εs = ${result.eps_s.toFixed(5)}`}
                     planteamiento="Por compatibilidad de deformaciones planas: el diagrama es lineal. Se usan triángulos semejantes."
-                    ecuacion={`εs = εcu × (d - c) / c\nεs = 0.003 × (${result.d.toFixed(2)} - ${result.c.toFixed(3)}) / ${result.c.toFixed(3)}\nεs = ${result.eps_s.toFixed(5)}\nεy = fy/Es = ${+form.fy}/210000 = ${result.eps_y.toFixed(5)}`}
+                    ecuacion={`εs = εcu × (d - c) / c\nεs = 0.003 × (${result.d.toFixed(2)} - ${result.c.toFixed(3)}) / ${result.c.toFixed(3)}\nεs = ${result.eps_s.toFixed(5)}\nεy = fy/Es = ${+form.fy}/${Es} = ${result.eps_y.toFixed(5)}`}
                     conclusion={{ tipo: result.eps_s >= result.eps_y ? "ok" : "err", texto: result.eps_s >= result.eps_y ? `✓ εs (${result.eps_s.toFixed(5)}) ≥ εy → acero fluye` : `✗ εs < εy → falla frágil` }} />
                   <StepCard num={5} title="Factor φ y zona de falla" result={`φ = ${result.phi.toFixed(2)} | ${result.zona}`}
                     planteamiento={`ACI 318-19 §21.2: φ depende de εt.\nεt ≥ 0.005 → Zona dúctil → φ = 0.90\nεy < εt < 0.005 → Transición → φ interpolado\nεt ≤ εy → Zona frágil → φ = 0.65`}

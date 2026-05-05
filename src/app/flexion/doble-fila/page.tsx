@@ -53,8 +53,13 @@ export default function DobleFilaPage() {
   }, [form]);
 
   const loadEj = () => {
-    setForm({ b:"30", h:"65", r_inf:"4", fc:"210", fy:"4200", nb1:"4", phi1:"25", nb2:"2", phi2:"25", sep_vert:"25", Mu:"" });
-    setTimeout(calcular, 50);
+    setForm({ b:"20", h:"50", r_inf:"5", fc:"200", fy:"4200", nb1:"3", phi1:"18", nb2:"3", phi2:"18", sep_vert:"25", Mu:"" });
+    const res = analizarDobleFila({
+      b:20, h:50, r_inf:5, fc:200, fy:4200,
+      nb1:3, phi1_mm:18, nb2:3, phi2_mm:18,
+      sep_vert_mm:25, Mu: null,
+    });
+    setResult(res);
   };
 
   const zona = result?.zona ?? "ductil";
