@@ -3,6 +3,16 @@ import { ArrowRight, BookOpen, Calculator, FlaskConical, Layers, BarChart3, Wren
 
 const SECTIONS = [
   {
+    label: "Teoría",
+    description: "Comportamiento mecánico, criterios de diseño y análisis de vigas — contenido completo del curso.",
+    color: "cyan",
+    items: [
+      { label: "Comportamiento Mecánico", href: "/teoria/comportamiento-mecanico", icon: BookOpen, desc: "Hormigón + Acero · σ-ε · Ec · Modelos constitutivos · Fluencia · Retracción" },
+      { label: "Criterios & Normas", href: "/teoria/criterios-diseno", icon: BookOpen, desc: "ASD · LRFD · NCh430 · NCh3171 · Combinaciones de carga" },
+      { label: "Vigas en Flexión", href: "/teoria/vigas-flexion", icon: Ruler, desc: "Whitney · Fallas · Cuantías · Doble armadura · Viga T · Diseño/Análisis" },
+    ],
+  },
+  {
     label: "Materiales",
     description: "Comportamiento mecánico del hormigón — modelos constitutivos, módulo de elasticidad, glosario.",
     color: "blue",

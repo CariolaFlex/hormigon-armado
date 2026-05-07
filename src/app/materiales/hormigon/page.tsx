@@ -8,10 +8,10 @@ export default function Capitulo1Page() {
         <div className="flex items-center gap-2 text-sm text-text-muted mb-2">
           <Link href="/" className="hover:text-text-secondary">Dashboard</Link>
           <span>/</span>
-          <span className="text-text-secondary">Capítulo 1</span>
+          <span className="text-text-secondary">Materiales</span>
         </div>
         <h1 className="text-3xl font-bold text-text-primary mb-2">
-          Capítulo 1 — Comportamiento Mecánico del Hormigón
+          Materiales — Hormigón
         </h1>
         <p className="text-text-secondary">
           Prof. Miguel Alexis Colque González · Universidad de La Serena · 1S 2026
@@ -46,7 +46,7 @@ export default function Capitulo1Page() {
           {
             icon: BookOpen,
             title: "Teoría & Glosario",
-            href: "/capitulo-1/teoria",
+            href: "/materiales/hormigon/teoria",
             color: "blue",
             desc: "Composición del HA, clasificación NCh170:2016, procedimiento NCh1037, glosario completo de 22 términos.",
             items: ["Glosario (22 términos)", "Clasificación NCh170", "Tipos de probetas", "Procedimiento NCh1037", "Progresión microfisuras"],
@@ -54,7 +54,7 @@ export default function Capitulo1Page() {
           {
             icon: Calculator,
             title: "Formulario",
-            href: "/capitulo-1/formulas",
+            href: "/materiales/hormigon/formulas",
             color: "amber",
             desc: "Todas las fórmulas del capítulo organizadas con derivación, parámetros y ejemplo numérico.",
             items: ["Ec = 4700√f'c", "Hognestad: fc = f''c·[2r − r²]", "Todeschini: fc = 2f''c·x/(1+x²)", "Parábola-Rect. (EN 1992)", "Conversión MPa ↔ kgf/cm²"],
@@ -62,7 +62,7 @@ export default function Capitulo1Page() {
           {
             icon: FlaskConical,
             title: "Laboratorio Interactivo",
-            href: "/capitulo-1/laboratorio",
+            href: "/materiales/hormigon/laboratorio",
             color: "green",
             desc: "8 gráficas científicas interactivas con controles en tiempo real, comparación de modelos y conversión de unidades.",
             items: ["Curva σ-ε con zonas", "Hognestad adjustable", "Todeschini completo", "Parábola-Rectángulo", "Comparación 3 modelos", "Efecto de f'c y densidad"],

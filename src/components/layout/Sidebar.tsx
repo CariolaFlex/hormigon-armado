@@ -41,6 +41,40 @@ const TOP_LINKS = [
 
 const SECTIONS: NavSection[] = [
   {
+    label: "Teoría",
+    icon: GraduationCap,
+    colorClass: "text-accent-cyan",
+    children: [
+      {
+        label: "Comportamiento Mecánico",
+        href: "/teoria/comportamiento-mecanico",
+        icon: BookOpen,
+        description: "Hormigón + Acero · σ-ε · Ec · Modelos",
+        accentBg: "bg-accent-cyan/15",
+        accentText: "text-accent-cyan",
+        accentBorder: "border-accent-cyan/20",
+      },
+      {
+        label: "Criterios & Normas",
+        href: "/teoria/criterios-diseno",
+        icon: BookOpen,
+        description: "ASD · LRFD · NCh430 · NCh3171",
+        accentBg: "bg-accent-blue/15",
+        accentText: "text-accent-blue",
+        accentBorder: "border-accent-blue/20",
+      },
+      {
+        label: "Vigas en Flexión",
+        href: "/teoria/vigas-flexion",
+        icon: Ruler,
+        description: "Whitney · Fallas · Cuantías · Diseño",
+        accentBg: "bg-accent-amber/15",
+        accentText: "text-accent-amber",
+        accentBorder: "border-accent-amber/20",
+      },
+    ],
+  },
+  {
     label: "Materiales",
     icon: Beaker,
     colorClass: "text-accent-blue",
