@@ -6,3 +6,6 @@
 > Las rutas de este repo ya se actualizaron; si aparece una ruta vieja, es un resto: corregirla.
 > Plan y bitácora: `C:\Cariolaspace\CariolaConfig\Cariolaspace\PLAN-REORGANIZACION-C.md`.
 > **Catálogo de Vectium:** demo que vive solo en GitHub + Vercel, sin bases de datos ni nube.
+
+**Para retomar, leer primero `ESTADO.md`**: estado al 2026-11-12, conexiones y cómo levantarlo en el Mac.
+Repo **público**: nada de secretos. Tailwind **v3** a propósito: no migrar a v4.
